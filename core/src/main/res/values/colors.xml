@@ -7,4 +7,5 @@
     <color name="dark_primary">#03121A</color>
     <color name="dark_secondary">#768288</color>
     <color name="accent">#5E8BA1</color>
+    <color name="color_gray_shimmer">#EFEFEF</color>
 </resources>

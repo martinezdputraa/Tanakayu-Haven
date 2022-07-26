@@ -23,6 +23,18 @@
         <entry key="..\:/Users/Martin/AndroidStudioProjects/TanakayuHaven/github_browser/src/main/res/layout/github_user_detail_activity.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/TanakayuHaven/github_browser/src/main/res/layout/layout_search_user_item.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/Martin/AndroidStudioProjects/TanakayuHaven/github_browser/src/main/res/layout/layout_user_repositories_item.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/drawable/ic_launcher_background.xml" value="0.234" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/layout/layout_project_item.xml" value="0.27233860624198375" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.234" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.234" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/mipmap/ic_launcher.xml" value="0.234" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/app/src/main/res/mipmap/ic_launcher_round.xml" value="0.234" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/core/src/main/res/layout/shimmer_2dp.xml" value="0.27233860624198375" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/github_browser/src/main/res/layout/github_user_detail_activity.xml" value="0.1912964641885766" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/github_browser/src/main/res/layout/layout_search_user_item.xml" value="0.27233860624198375" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/github_browser/src/main/res/layout/layout_shimmer_user_detail_activity_header.xml" value="0.27233860624198375" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/github_browser/src/main/res/layout/layout_shimmer_user_detail_repositories.xml" value="0.27233860624198375" />
+        <entry key="..\:/Users/Martin/Documents/TanakayuHaven/github_browser/src/main/res/layout/layout_user_repositories_item.xml" value="0.27233860624198375" />
       </map>
     </option>
   </component>

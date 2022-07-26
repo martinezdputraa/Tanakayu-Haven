@@ -3,7 +3,7 @@
     <style name="Theme.App.Starting" parent="Theme.SplashScreen">
         <item name="windowSplashScreenBackground">@color/color_blue_sky</item>
 
-        <item name="windowSplashScreenAnimatedIcon">@drawable/github</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/pusheen_face</item>
 
         <item name="postSplashScreenTheme">@style/AppTheme</item>
     </style>

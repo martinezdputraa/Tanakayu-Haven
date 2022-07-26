@@ -3,27 +3,22 @@ package com.tanakayu.github_browser.ui.search
 import android.app.Activity
 import android.content.Intent
 import android.os.Handler
-import android.os.Looper
 import androidx.activity.viewModels
-import androidx.core.content.ContextCompat
-import com.tanakayu.core.R.*
-import com.tanakayu.core.ui.CoreActivity
 import com.tanakayu.core.util.afterTextChanged
 import com.tanakayu.github_browser.R
-import com.tanakayu.github_browser.databinding.GithubSearchUserActivityBinding
+import com.tanakayu.github_browser.databinding.GithubActivitySearchUserBinding
 import com.tanakayu.github_browser.datamodel.GithubUserDetailDataModel
 import com.tanakayu.github_browser.ui.core.GithubCoreActivity
 import com.tanakayu.github_browser.ui.detail.GithubDetailActivity
 import dagger.hilt.android.AndroidEntryPoint
-import java.util.*
 
 @AndroidEntryPoint
-class GithubBrowserActivity: GithubCoreActivity<GithubBrowserViewModel, GithubSearchUserActivityBinding>(),
+class GithubBrowserActivity: GithubCoreActivity<GithubBrowserViewModel, GithubActivitySearchUserBinding>(),
     GithubSearchResultAdapter.OnUserSelectedListener {
 
     private lateinit var adapter: GithubSearchResultAdapter
 
-    override fun getLayoutId() = R.layout.github_search_user_activity
+    override fun getLayoutId() = R.layout.github_activity_search_user
 
     override fun createViewModel() = viewModels<GithubBrowserViewModel>()
 

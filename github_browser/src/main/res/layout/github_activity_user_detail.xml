@@ -18,7 +18,25 @@
         android:orientation="vertical"
         android:padding="@dimen/spacing_m">
 
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:shimmer_base_alpha="1"
+            app:shimmer_dropoff="0.5"
+            app:shimmer_duration="1300"
+            app:shimmer_highlight_alpha="0.5"
+            app:shimmer_intensity="0.5"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="linear"
+            app:shimmer_tilt="1">
+
+            <include layout="@layout/layout_shimmer_user_detail_header" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
         <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/layout_header"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -33,7 +51,6 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/spacing_s"
                 android:orientation="vertical">
 
                 <androidx.appcompat.widget.AppCompatTextView
@@ -155,6 +172,23 @@
             android:layout_marginTop="@dimen/spacing_s"
             android:visibility="gone"
             tools:visibility="visible" />
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmer_repositories"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:shimmer_base_alpha="1"
+            app:shimmer_dropoff="0.5"
+            app:shimmer_duration="1300"
+            app:shimmer_highlight_alpha="0.5"
+            app:shimmer_intensity="0.5"
+            app:shimmer_repeat_mode="restart"
+            app:shimmer_shape="linear"
+            app:shimmer_tilt="1">
+
+            <include layout="@layout/layout_shimmer_user_detail_repositories" />
+        </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_view_repositories"

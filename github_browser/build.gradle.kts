@@ -1,3 +1,4 @@
+import com.tanakayu.haven.libs.Facebook
 import com.tanakayu.haven.libs.Jodatime
 
 apply {
@@ -7,4 +8,5 @@ apply {
 dependencies {
     "implementation"(project(":core"))
     "implementation"(Jodatime.jodatime)
+    "implementation"(Facebook.shimmer)
 }

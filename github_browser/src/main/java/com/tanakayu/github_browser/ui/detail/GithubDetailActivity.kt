@@ -3,37 +3,61 @@ package com.tanakayu.github_browser.ui.detail
 import android.app.Activity
 import android.content.Intent
 import androidx.activity.viewModels
-import com.tanakayu.core.ui.CoreActivity
+import com.tanakayu.core.util.gone
+import com.tanakayu.core.util.visible
 import com.tanakayu.core.util.visibleIf
 import com.tanakayu.github_browser.R
-import com.tanakayu.github_browser.databinding.GithubUserDetailActivityBinding
+import com.tanakayu.github_browser.databinding.GithubActivityUserDetailBinding
 import com.tanakayu.github_browser.ui.core.GithubCoreActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class GithubDetailActivity: GithubCoreActivity<GithubDetailViewModel, GithubUserDetailActivityBinding>() {
+class GithubDetailActivity: GithubCoreActivity<GithubDetailViewModel, GithubActivityUserDetailBinding>() {
 
     private val adapter = GithubUserRepositoriesAdapter()
 
     override fun createViewModel() = viewModels<GithubDetailViewModel>()
 
-    override fun getLayoutId() = R.layout.github_user_detail_activity
+    override fun getLayoutId() = R.layout.github_activity_user_detail
 
     override fun onInitView() {
         val userId = intent.getStringExtra(EXTRA_KEY)!!
         viewModel.prepareData(userId)
 
+        startShimmers()
         initViewComponents()
+    }
+
+    private fun startShimmers() {
+        with(viewBinder.shimmerHeader) {
+            if (!isShimmerStarted) startShimmer()
+            visible()
+            viewBinder.layoutHeader.gone()
+        }
+
+        with(viewBinder.shimmerRepositories) {
+            if (!isShimmerStarted) startShimmer()
+            visible()
+            viewBinder.recyclerViewRepositories.gone()
+        }
     }
 
     private fun initViewComponents() {
         viewModel.userDetail.observe(this) {
-            viewBinder.userData = it
+            viewBinder.apply {
+                userData = it
+                shimmerHeader.gone()
+                layoutHeader.visible()
+            }
         }
 
         viewModel.repositories.observe(this) {
-            viewBinder.textViewNoRepositories.visibleIf(it.isNullOrEmpty())
-            viewBinder.separator.visibleIf(!it.isNullOrEmpty())
+            viewBinder.apply {
+                recyclerViewRepositories.visibleIf(!it.isNullOrEmpty())
+                textViewNoRepositories.visibleIf(it.isNullOrEmpty())
+                separator.visibleIf(!it.isNullOrEmpty())
+                shimmerRepositories.gone()
+            }
             adapter.setData(it)
         }
 
