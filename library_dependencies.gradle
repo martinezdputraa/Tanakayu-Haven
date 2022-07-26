@@ -1,0 +1,57 @@
+import com.tanakayu.haven.libs.Airbnb
+import com.tanakayu.haven.libs.AndroidSvg
+import com.tanakayu.haven.libs.AndroidX
+import com.tanakayu.haven.libs.Chucker
+import com.tanakayu.haven.libs.Glide
+import com.tanakayu.haven.libs.Google
+import com.tanakayu.haven.libs.JUnit
+import com.tanakayu.haven.libs.Jetbrains
+import com.tanakayu.haven.libs.SquareUp
+
+dependencies {
+    /** Core **/
+    implementation Jetbrains.kotlin
+    implementation AndroidX.coreKtx
+    implementation AndroidX.appCompat
+    implementation Google.materialDesign
+    implementation AndroidX.navigationFragment
+
+    /** Splash Screen **/
+    implementation AndroidX.splashScreen
+
+    /** Hilt **/
+    implementation Google.hilt
+    kapt Google.hiltCompiler
+
+    /** Architecture **/
+    implementation AndroidX.lifeCycleViewModel
+    implementation AndroidX.lifeCycleLiveData
+    implementation Jetbrains.coroutineAndroid
+
+    /** Testing **/
+    testImplementation JUnit.jUnit
+    androidTestImplementation AndroidX.testExtJunit
+    androidTestImplementation AndroidX.testEspresso
+
+    /** Lottie **/
+    implementation Airbnb.lottie
+
+    /** Chucker **/
+    debugImplementation Chucker.chucker
+    releaseImplementation Chucker.chuckerNoop
+
+    /** Glide **/
+    implementation Glide.glide
+    kapt Glide.compiler
+
+    /** Picasso **/
+    implementation SquareUp.picasso
+
+    /** Android SVG **/
+    implementation AndroidSvg.androidSvg
+
+    /** Retrofit **/
+    implementation SquareUp.retrofit
+    implementation SquareUp.retrofitConverterGson
+    implementation SquareUp.loggingInterceptor
+}

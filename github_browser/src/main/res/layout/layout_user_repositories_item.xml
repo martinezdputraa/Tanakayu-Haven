@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="viewModel"
+            type="com.tanakayu.github_browser.datamodel.GithubUserRepositoryDataModel" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/spacing_m">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view_owner_dp"
+                android:layout_width="64dp"
+                android:layout_height="64dp"
+                android:layout_marginEnd="@dimen/spacing_m"
+                app:imageUrl="@{viewModel.ownerDpUrl}"
+                tools:srcCompat="@drawable/pusheen" />
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_view_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/dark_primary"
+                    android:textSize="@dimen/font_size_l"
+                    android:textStyle="bold"
+                    app:textHideIfEmpty="@{viewModel.name}"
+                    tools:text="Excalibur" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/text_view_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    android:textColor="@color/dark_primary"
+                    android:textSize="@dimen/font_size_s"
+                    app:textHideIfEmpty="@{viewModel.description}"
+                    tools:text="The world is not a scary place, it's just filled with scary people. You may bring forth world peace when you find it inside yourself" />
+
+                <androidx.appcompat.widget.LinearLayoutCompat
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_s"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:layout_marginEnd="@dimen/spacing_xs"
+                        app:srcCompat="@drawable/star" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_view_star_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{Integer.toString(viewModel.stars)}"
+                        android:textColor="@color/dark_primary"
+                        android:textSize="@dimen/font_size_s"
+                        tools:text="55" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/text_view_last_updated"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_l"
+                        android:textColor="@color/dark_primary"
+                        android:textSize="@dimen/font_size_s"
+                        app:textHideIfEmpty="@{viewModel.lastUpdated}"
+                        tools:text="Last updated 15 hours ago" />
+                </androidx.appcompat.widget.LinearLayoutCompat>
+            </androidx.appcompat.widget.LinearLayoutCompat>
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <View style="@style/Divider.Horizontal"/>
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

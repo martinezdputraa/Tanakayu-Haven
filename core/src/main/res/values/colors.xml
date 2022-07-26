@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="color_blue_sky">#4DBDEA</color>
+    <color name="color_dark_blue_sky">#4D30A7EA</color>
+    <color name="color_bright_green">#2CCE4E</color>
+    <color name="color_gray">#C5C5C5</color>
+    <color name="dark_primary">#03121A</color>
+    <color name="dark_secondary">#768288</color>
+    <color name="accent">#5E8BA1</color>
+</resources>

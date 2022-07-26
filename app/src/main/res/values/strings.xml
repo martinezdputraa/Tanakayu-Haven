@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_project_title_github">Github Browser</string>
+    <string name="text_project_story_github">This project was an online test from Ajaib. It did not land me the job there but it did somewhere else</string>
+
+    <string name="text_project_title_paypay">Currency Converter</string>
+    <string name="text_project_story_paypay">This project was an online test for a company located in Japan. I got rejected and was not given any useful feedbacks even though I asked for them</string>
+
+    <string name="text_project_title_wheel_simulator">Wheel Simulator</string>
+    <string name="text_project_story_wheel_simulator">This was the online test for Gojek. Although I made it past the first round, I didn\'t get through the second round. I even asked for a second chance and still did not manage to pass</string>
+</resources>
