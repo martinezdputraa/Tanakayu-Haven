@@ -26,13 +26,11 @@
 
             <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/edit_text_input"
+                style="@style/TanakayuEditText"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/spacing_m"
-                android:background="@drawable/bg_edit_text"
-                android:hint="@string/text_github_hint_search_bar"
-                android:padding="@dimen/spacing_m"
-                android:singleLine="true"
+                android:hint="@string/github_text_search_bar_hint"
                 android:text="@={viewModel.inputAmount}" />
 
             <androidx.cardview.widget.CardView
@@ -49,7 +47,7 @@
                     android:layout_height="wrap_content"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     tools:itemCount="5"
-                    tools:listitem="@layout/layout_search_user_item" />
+                    tools:listitem="@layout/github_layout_search_user_item" />
 
             </androidx.cardview.widget.CardView>
         </androidx.appcompat.widget.LinearLayoutCompat>

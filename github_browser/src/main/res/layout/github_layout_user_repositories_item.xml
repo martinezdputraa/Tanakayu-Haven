@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_l"
                     android:textStyle="bold"
                     app:textHideIfEmpty="@{viewModel.name}"
@@ -53,7 +53,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_xs"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_s"
                     app:textHideIfEmpty="@{viewModel.description}"
                     tools:text="The world is not a scary place, it's just filled with scary people. You may bring forth world peace when you find it inside yourself" />
@@ -76,7 +76,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@{Integer.toString(viewModel.stars)}"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         tools:text="55" />
 
@@ -85,7 +85,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_l"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{viewModel.lastUpdated}"
                         tools:text="Last updated 15 hours ago" />

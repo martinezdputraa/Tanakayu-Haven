@@ -1,23 +1,7 @@
 <resources>
-    <string name="text_github_browser">Github Browser</string>
-    <string name="text_github_hint_search_bar">Enter Query</string>
-    <string name="text_github_followers_x_following_count">%1$d Followers | %2$d Following</string>
-    <string name="text_github_no_repositories">"This user doesn't have any active repositories!"</string>
-    <string name="text_github_updated_x_ago">Updated %1$s ago</string>
-    <plurals name="hour">
-        <item quantity="one">%1$d hour</item>
-        <item quantity="other">%1$d hours</item>
-    </plurals>
-    <plurals name="day">
-        <item quantity="one">%1$d day</item>
-        <item quantity="other">%1$d days</item>
-    </plurals>
-    <plurals name="month">
-        <item quantity="one">%1$d month</item>
-        <item quantity="other">%1$d months</item>
-    </plurals>
-    <plurals name="year">
-        <item quantity="one">%1$d year</item>
-        <item quantity="other">%1$d years</item>
-    </plurals>
+    <string name="github_text_title">Github Browser</string>
+    <string name="github_text_search_bar_hint">Enter Query</string>
+    <string name="github_text_followers_x_following_count">%1$d Followers | %2$d Following</string>
+    <string name="github_text_no_repositories">"This user doesn't have any active repositories!"</string>
+    <string name="github_text_updated_x_ago">Updated %1$s ago</string>
 </resources>

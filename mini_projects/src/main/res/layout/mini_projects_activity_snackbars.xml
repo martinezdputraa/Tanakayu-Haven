@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.tanakayu.mini_projects.ui.snackbars.MiniProjectsSnackbarsViewModel" />
+
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_m">
+
+        <androidx.appcompat.widget.AppCompatEditText
+            android:id="@+id/edit_text_input"
+            style="@style/TanakayuEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/minirepo_text_input_hint"
+            android:text="@={viewModel.inputText}" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_error"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:text="@string/minirepo_text_error" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_warning"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:text="@string/minirepo_text_warning" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_success"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:text="@string/minirepo_text_success" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:text="@string/minirepo_text_info" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

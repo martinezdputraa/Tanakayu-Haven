@@ -1,7 +1,7 @@
 package com.tanakayu.github_browser.util
 
 import android.content.Context
-import com.tanakayu.github_browser.R
+import com.tanakayu.core.R
 import org.joda.time.DateTime
 
 object GithubDateHelper {

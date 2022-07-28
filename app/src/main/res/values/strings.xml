@@ -8,4 +8,12 @@
 
     <string name="text_project_title_wheel_simulator">Wheel Simulator</string>
     <string name="text_project_story_wheel_simulator">This was the online test for Gojek. Although I made it past the first round, I didn\'t get through the second round. I even asked for a second chance and still did not manage to pass</string>
+
+    <string name="text_project_title_start_activity_for_result">Start activity for result</string>
+    <string name="text_project_story_start_activity_for_result">Navigate to another activity then get the data passed using Intents</string>
+
+    <string name="text_mini_project_title_snackbar">Snackbar</string>
+
+    <string name="text_mini_project_title_ndk">NDK Integration</string>
+    <string name="text_mini_project_story_ndk">NDK stands for Native Development Kit is a set of tools that allows you to use C and C++ code with Android. It is commonly used to store baseUrl(s) and other sensitive data but is not limited to that</string>
 </resources>

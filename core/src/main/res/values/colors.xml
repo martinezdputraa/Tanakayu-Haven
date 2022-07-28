@@ -1,11 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="color_whitish_blue">#B7DFEF</color>
     <color name="color_blue_sky">#4DBDEA</color>
+    <color name="color_sea_sky">#148DBD</color>
     <color name="color_dark_blue_sky">#4D30A7EA</color>
+    <color name="color_whitish_green">#C7F3D0</color>
     <color name="color_bright_green">#2CCE4E</color>
+    <color name="color_whitish_yellow">#F1EDCA</color>
+    <color name="color_yellow">#FFEB3B</color>
     <color name="color_gray">#C5C5C5</color>
-    <color name="dark_primary">#03121A</color>
-    <color name="dark_secondary">#768288</color>
-    <color name="accent">#5E8BA1</color>
+    <color name="color_dark_gray">#706F6F</color>
+    <color name="color_pink">#E3655F</color>
+    <color name="color_whitish_pink">#EFB5B3</color>
+    <color name="color_red">#DE4841</color>
     <color name="color_gray_shimmer">#EFEFEF</color>
+    <color name="color_dark_primary">#03121A</color>
+    <color name="color_dark_secondary">#768288</color>
+    <color name="color_accent">#5E8BA1</color>
 </resources>

@@ -13,11 +13,11 @@ abstract class GithubCoreActivity<VM: CoreViewModel, VB: ViewDataBinding> : Core
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val darkColor = ContextCompat.getColor(this, R.color.dark_primary)
+        val darkColor = ContextCompat.getColor(this, R.color.color_dark_primary)
         window.statusBarColor = darkColor
         supportActionBar?.apply {
             setBackgroundDrawable(ColorDrawable(darkColor))
-            title = resources.getString(string.text_github_browser)
+            title = resources.getString(string.github_text_title)
             setDisplayHomeAsUpEnabled(true)
         }
     }

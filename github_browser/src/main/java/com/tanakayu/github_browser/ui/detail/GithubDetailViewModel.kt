@@ -45,7 +45,7 @@ class GithubDetailViewModel @Inject constructor(
                 location = response.location
                 email = response.email
                 followers = injectedContext.getString(
-                    R.string.text_github_followers_x_following_count,
+                    R.string.github_text_followers_x_following_count,
                     response.followersCount,
                     response.followingCount)
             })
@@ -62,7 +62,7 @@ class GithubDetailViewModel @Inject constructor(
                     userRepo.name,
                     userRepo.description,
                     userRepo.stars,
-                    injectedContext.getString(R.string.text_github_updated_x_ago, lastUpdateFormatted),
+                    injectedContext.getString(R.string.github_text_updated_x_ago, lastUpdateFormatted),
                     userRepo.owner.avatarUrl
                 )
             }

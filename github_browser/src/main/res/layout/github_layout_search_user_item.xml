@@ -49,7 +49,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="@dimen/spacing_s"
                         android:gravity="center"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_xl"
                         android:textStyle="bold"
                         app:textHideIfEmpty="@{viewModel.name}"
@@ -61,7 +61,7 @@
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="@{'@' + viewModel.id}"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_m"
                         tools:text="\@wangshieun" />
 
@@ -72,7 +72,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/spacing_s"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_m"
                     app:textHideIfEmpty="@{viewModel.bio}"
                     tools:text="Director of Mihoyo Company" />
@@ -87,7 +87,7 @@
                         android:id="@+id/text_view_location"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{viewModel.location}"
                         tools:text="Taipei, Taiwan" />
@@ -97,7 +97,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_s"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{viewModel.email}"
                         tools:text="mihoyo@gmail.com" />

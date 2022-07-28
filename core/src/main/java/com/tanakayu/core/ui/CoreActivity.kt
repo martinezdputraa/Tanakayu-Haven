@@ -2,17 +2,24 @@ package com.tanakayu.core.ui
 
 import android.os.Bundle
 import android.view.MenuItem
+import android.view.View
+import android.widget.TextView
 import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import com.google.android.material.snackbar.Snackbar
 import com.tanakayu.core.R
+import com.tanakayu.core.constants.SnackbarType
 
 abstract class CoreActivity<VM: CoreViewModel, VB: ViewDataBinding>: AppCompatActivity() {
     private lateinit var mViewModel: VM
 
     protected lateinit var viewBinder: VB
+
+    val viewModel: VM
+        get() = mViewModel
 
     abstract fun createViewModel(): Lazy<VM>
 
@@ -52,6 +59,17 @@ abstract class CoreActivity<VM: CoreViewModel, VB: ViewDataBinding>: AppCompatAc
         viewBinder.executePendingBindings()
     }
 
-    val viewModel: VM
-        get() = mViewModel
+    fun showSnackbar(
+        message: String?,
+        duration: Int = Snackbar.LENGTH_LONG,
+        type: SnackbarType = SnackbarType.Error
+    ) {
+        val snackbar = Snackbar.make(viewBinder.root, message ?: "", duration)
+            .setBackgroundTint(ContextCompat.getColor(this, type.backgroundColor))
+            .setTextColor(ContextCompat.getColor(this, type.textColor))
+        val snackbarView = snackbar.view
+        val textView = snackbarView.findViewById<TextView>(com.google.android.material.R.id.snackbar_text)
+        textView.maxLines = 4
+        snackbar.show()
+    }
 }

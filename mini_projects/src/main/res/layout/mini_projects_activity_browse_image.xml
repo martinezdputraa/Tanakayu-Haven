@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_pick_image"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/minirepo_text_open_file" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_activity_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
+            android:text="@string/minirepo_text_start_activity_for_result" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

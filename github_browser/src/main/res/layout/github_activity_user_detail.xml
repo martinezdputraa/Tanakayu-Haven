@@ -32,7 +32,7 @@
             app:shimmer_shape="linear"
             app:shimmer_tilt="1">
 
-            <include layout="@layout/layout_shimmer_user_detail_header" />
+            <include layout="@layout/github_layout_shimmer_user_detail_header" />
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -58,7 +58,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:gravity="center"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_xl"
                     android:textStyle="bold"
                     app:textHideIfEmpty="@{userData.name}"
@@ -70,7 +70,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_xs"
                     android:gravity="center"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_m"
                     app:textHideIfEmpty="@{'@' + userData.id}"
                     tools:text="\@wangguan" />
@@ -80,7 +80,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/spacing_s"
-                    android:textColor="@color/dark_primary"
+                    android:textColor="@color/color_dark_primary"
                     android:textSize="@dimen/font_size_m"
                     app:textHideIfEmpty="@{userData.bio}"
                     tools:text="Director of Mihoyo Company, Director of Mobile \@mihoyo. DevRel. Engineering" />
@@ -103,7 +103,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_s"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{userData.followers}"
                         tools:text="12K Followers | 120 Following" />
@@ -129,7 +129,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_s"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{userData.location}"
                         tools:text="Taipei, Taiwan" />
@@ -155,7 +155,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="@dimen/spacing_s"
-                        android:textColor="@color/dark_primary"
+                        android:textColor="@color/color_dark_primary"
                         android:textSize="@dimen/font_size_s"
                         app:textHideIfEmpty="@{userData.email}"
                         tools:text="wangshi@mihoyo.com" />
@@ -187,7 +187,7 @@
             app:shimmer_shape="linear"
             app:shimmer_tilt="1">
 
-            <include layout="@layout/layout_shimmer_user_detail_repositories" />
+            <include layout="@layout/github_layout_shimmer_user_detail_repositories" />
         </com.facebook.shimmer.ShimmerFrameLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -196,16 +196,16 @@
             android:layout_height="wrap_content"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             tools:itemCount="5"
-            tools:listitem="@layout/layout_user_repositories_item" />
+            tools:listitem="@layout/github_layout_user_repositories_item" />
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/text_view_no_repositories"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_s"
-            android:text="@string/text_github_no_repositories"
+            android:text="@string/github_text_no_repositories"
             android:textAlignment="center"
-            android:textColor="@color/dark_primary"
+            android:textColor="@color/color_dark_primary"
             android:textSize="@dimen/font_size_xl"
             android:visibility="gone" />
 

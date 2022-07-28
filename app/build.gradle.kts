@@ -48,4 +48,5 @@ android {
 dependencies {
     "implementation"(project(":core"))
     "implementation"(project(":github_browser"))
+    "implementation"(project(":mini_projects"))
 }

@@ -49,6 +49,23 @@ class HomepageViewModel @Inject constructor(
                 R.drawable.gojek,
                 injectedContext.getString(R.string.text_project_title_wheel_simulator),
                 injectedContext.getString(R.string.text_project_story_wheel_simulator),
+            ),
+            ProjectDataModel(
+                ProjectName.START_ACTIVITY_FOR_RESULT,
+                R.drawable.navigation_graph,
+                injectedContext.getString(R.string.text_project_title_start_activity_for_result),
+                injectedContext.getString(R.string.text_project_story_start_activity_for_result),
+            ),
+            ProjectDataModel(
+                ProjectName.SNACKBAR,
+                R.drawable.snackbar,
+                injectedContext.getString(R.string.text_mini_project_title_snackbar),
+            ),
+            ProjectDataModel(
+                ProjectName.NDK,
+                R.drawable.android_ndk,
+                injectedContext.getString(R.string.text_mini_project_title_ndk),
+                injectedContext.getString(R.string.text_mini_project_story_ndk),
             )
         )
     }

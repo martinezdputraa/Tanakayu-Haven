@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tanakayu.github_browser.databinding.LayoutSearchUserItemBinding
+import com.tanakayu.github_browser.databinding.GithubLayoutSearchUserItemBinding
 import com.tanakayu.github_browser.datamodel.GithubUserDetailDataModel
 
 class GithubSearchResultAdapter(
@@ -18,7 +18,7 @@ class GithubSearchResultAdapter(
         viewType: Int
     ): SearchUserItemViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val itemBinding = LayoutSearchUserItemBinding.inflate(layoutInflater, parent, false)
+        val itemBinding = GithubLayoutSearchUserItemBinding.inflate(layoutInflater, parent, false)
         return SearchUserItemViewHolder(itemBinding)
     }
 
@@ -40,7 +40,7 @@ class GithubSearchResultAdapter(
         fun onUserSelected(selectedUserDataModel: GithubUserDetailDataModel)
     }
 
-    inner class SearchUserItemViewHolder(private val binding: LayoutSearchUserItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class SearchUserItemViewHolder(private val binding: GithubLayoutSearchUserItemBinding) : RecyclerView.ViewHolder(binding.root) {
 
         fun bind(item: GithubUserDetailDataModel) {
             binding.run {

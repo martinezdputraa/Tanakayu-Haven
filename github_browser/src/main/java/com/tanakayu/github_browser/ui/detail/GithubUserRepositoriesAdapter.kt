@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.tanakayu.github_browser.databinding.LayoutUserRepositoriesItemBinding
+import com.tanakayu.github_browser.databinding.GithubLayoutUserRepositoriesItemBinding
 import com.tanakayu.github_browser.datamodel.GithubUserRepositoryDataModel
 
 class GithubUserRepositoriesAdapter : RecyclerView.Adapter<GithubUserRepositoriesAdapter.UserRepositoriesItemViewHolder>(){
@@ -16,7 +16,7 @@ class GithubUserRepositoriesAdapter : RecyclerView.Adapter<GithubUserRepositorie
         viewType: Int
     ): UserRepositoriesItemViewHolder {
         val layoutInflater = LayoutInflater.from(parent.context)
-        val itemBinding = LayoutUserRepositoriesItemBinding.inflate(layoutInflater, parent, false)
+        val itemBinding = GithubLayoutUserRepositoriesItemBinding.inflate(layoutInflater, parent, false)
         return UserRepositoriesItemViewHolder(itemBinding)
     }
 
@@ -34,7 +34,7 @@ class GithubUserRepositoriesAdapter : RecyclerView.Adapter<GithubUserRepositorie
         notifyDataSetChanged()
     }
 
-    inner class UserRepositoriesItemViewHolder(private val binding: LayoutUserRepositoriesItemBinding) : RecyclerView.ViewHolder(binding.root) {
+    inner class UserRepositoriesItemViewHolder(private val binding: GithubLayoutUserRepositoriesItemBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(item: GithubUserRepositoryDataModel) {
             binding.run {
                 viewModel = item

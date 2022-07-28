@@ -1,0 +1,22 @@
+<resources>
+    <string name="minirepo_text_title">Mini Projects</string>
+    <string name="minirepo_text_open_file">Open Gallery/Camera</string>
+    <string name="minirepo_text_open_gallery">Open Gallery</string>
+    <string name="minirepo_text_open_camera">Open Camera</string>
+    <string name="minirepo_text_start_activity_for_result">Get data using onActivityResult</string>
+    <string name="minirepo_text_request_camera_storage_description">We need to access your camera and storage to show this feature. Pwease grant?</string>
+    <string name="minirepo_text_unable_to_access">Cannot access image</string>
+    <string name="minirepo_text_error">Error</string>
+    <string name="minirepo_text_warning">Warning</string>
+    <string name="minirepo_text_success">Success</string>
+    <string name="minirepo_text_info">Info</string>
+    <string name="minirepo_text_input_hint">Input your text here…</string>
+    <string name="minirepo_text_cannot_be_empty">Text cannot be empty, please input something</string>
+
+    <string name="minirepo_text_error_message_example">This is an error message. There are many errors in this world but this one is unique because it has only one eyes. Prepare for the holy feast and say your prayers.</string>
+    <string name="minirepo_text_warning_message_example">A warning message\'s job is to warn your about the impending occurrence. Sometimes it is negligible, other times it is quite dangerous.</string>
+    <string name="minirepo_text_success_message_example">Success! Bravo! Congratulations! Selamat!</string>
+    <string name="minirepo_text_info_message_example">I am here to inform you about the information that is not relevant to any other information that you have received throughout your journey.</string>
+
+    <string name="minirepo_text_finish">Finish</string>
+</resources>

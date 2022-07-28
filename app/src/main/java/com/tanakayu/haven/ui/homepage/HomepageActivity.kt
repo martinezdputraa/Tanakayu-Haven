@@ -4,16 +4,20 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+import com.tanakayu.core.constants.SnackbarType
 import com.tanakayu.core.ui.CoreActivity
 import com.tanakayu.github_browser.ui.search.GithubBrowserActivity
 import com.tanakayu.haven.R
 import com.tanakayu.haven.databinding.ActivityHomepageBinding
 import com.tanakayu.haven.datamodel.ProjectDataModel
 import com.tanakayu.haven.datamodel.constants.ProjectName
+import com.tanakayu.mini_projects.ui.browse_image.MiniProjectsBrowseImageActivity
+import com.tanakayu.mini_projects.ui.snackbars.MiniProjectsSnackbarsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
-class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding>(), HomepageAdapter.OnItemSelectedListener {
+class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding>(),
+    HomepageAdapter.OnItemSelectedListener {
 
     private val adapter = HomepageAdapter(this)
 
@@ -36,17 +40,26 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
     }
 
     override fun onItemSelected(item: ProjectDataModel) {
-        when(item.projectId) {
+        when (item.projectId) {
             ProjectName.GITHUB_BROWSER -> navigateToGithubBrowser()
-            else -> showToast(item.projectTitle + " is not yet ready")
+            ProjectName.START_ACTIVITY_FOR_RESULT -> navigateToStartActivityForResult()
+            ProjectName.SNACKBAR -> navigateToSnackbarsActivity()
+            else -> showSnackbar(
+                item.projectTitle + " is not yet ready",
+                type = SnackbarType.Warning
+            )
         }
     }
 
-    private fun navigateToGithubBrowser() {
-        GithubBrowserActivity.startThisActivity(this@HomepageActivity)
+    private fun navigateToSnackbarsActivity() {
+        MiniProjectsSnackbarsActivity.startThisActivity(this)
     }
 
-    private fun showToast(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+    private fun navigateToGithubBrowser() {
+        GithubBrowserActivity.startThisActivity(this)
+    }
+
+    private fun navigateToStartActivityForResult() {
+        MiniProjectsBrowseImageActivity.startThisActivity(this)
     }
 }
