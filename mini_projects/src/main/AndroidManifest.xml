@@ -15,6 +15,10 @@
             android:name=".ui.activity_result.MiniProjectsStringResultActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.ndk.MiniProjectsNdkActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 </manifest>

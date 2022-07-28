@@ -5,10 +5,11 @@ import android.annotation.TargetApi
 import android.app.Activity
 import android.content.Context
 import android.content.Intent
+import android.database.Cursor
 import android.graphics.drawable.ColorDrawable
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
-import android.os.Environment
 import android.provider.MediaStore
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.widget.AppCompatButton
@@ -24,7 +25,8 @@ import pub.devrel.easypermissions.AfterPermissionGranted
 import pub.devrel.easypermissions.EasyPermissions
 import java.io.File
 
-abstract class MiniProjectsCoreActivity<VM: CoreViewModel, VB: ViewDataBinding> : CoreActivity<VM, VB>() {
+abstract class MiniProjectsCoreActivity<VM : CoreViewModel, VB : ViewDataBinding> :
+    CoreActivity<VM, VB>() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -50,7 +52,7 @@ abstract class MiniProjectsCoreActivity<VM: CoreViewModel, VB: ViewDataBinding> 
         EasyPermissions.onRequestPermissionsResult(requestCode, permissions, grantResults, this)
     }
 
-    protected open fun onFileFetchedCallback(file: File?) {
+    protected open fun onFileFetchedCallback(file: File, uri: Uri) {
 
     }
 
@@ -85,30 +87,60 @@ abstract class MiniProjectsCoreActivity<VM: CoreViewModel, VB: ViewDataBinding> 
     }
 
     /** ACTIVITY RESULT LAUNCHERS **/
-    private val startForImageResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.path?.also { filePath ->
-                val file = File(filePath)
-                if (file.exists()) {
-                    onFileFetchedCallback(file)
-                } else {
-                    showSnackbar(getString(string.minirepo_text_unable_to_access))
+    private val startForImageResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val uri = result.data?.data
+                if (uri != null) {
+                    val file = File(uri.path!!)
+                    if (file.exists()) {
+                        onFileFetchedCallback(file, uri)
+                        return@registerForActivityResult
+                    }
                 }
             }
+            showSnackbar(getString(string.minirepo_text_unable_to_access))
         }
+
+    private val startForGalleryResult =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
+            if (result.resultCode == Activity.RESULT_OK) {
+                val uri = result.data?.data
+                if (uri != null) {
+                    val file = File(getPathFromGallery(uri)!!)
+                    if (file.exists()) {
+                        onFileFetchedCallback(file, uri)
+                        return@registerForActivityResult
+                    }
+                }
+            }
+            showSnackbar(getString(string.minirepo_text_unable_to_access))
+        }
+
+    private fun getPathFromGallery(uri: Uri): String? {
+        if ("content".equals(uri.scheme, ignoreCase = true)) {
+            return getDataColumn(this, uri, null, null)
+        }
+        return ""
     }
 
-    private val startForGalleryResult = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
-        if (result.resultCode == Activity.RESULT_OK) {
-            result.data?.data?.path?.also { filePath ->
-                val file = File(Environment.getExternalStorageDirectory().path + "/" + filePath)
-                if (file.exists()) {
-                    onFileFetchedCallback(file)
-                } else {
-                    showSnackbar(getString(string.minirepo_text_unable_to_access))
-                }
+    /** some dark magic from https://stackoverflow.com/questions/3401579/get-filename-and-path-from-uri-from-mediastore?page=1&tab=scoredesc#tab-top **/
+    private fun getDataColumn(context: Context, uri: Uri, selection: String?, selectionArgs: Array<String>?): String? {
+        var cursor: Cursor? = null
+        val column = "_data"
+        val projection = arrayOf(
+            column
+        )
+        try {
+            cursor = context.contentResolver.query(uri, projection, selection, selectionArgs, null)
+            if (cursor != null && cursor.moveToFirst()) {
+                val columnIndex = cursor.getColumnIndexOrThrow(column)
+                return cursor.getString(columnIndex)
             }
+        } finally {
+            cursor?.close()
         }
+        return null
     }
 
     /** PRIVATE FUNS **/

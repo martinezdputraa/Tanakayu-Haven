@@ -12,6 +12,7 @@
     <string name="minirepo_text_info">Info</string>
     <string name="minirepo_text_input_hint">Input your text here…</string>
     <string name="minirepo_text_cannot_be_empty">Text cannot be empty, please input something</string>
+    <string name="minirepo_text_get_value_from_ndk">Get value from NDK</string>
 
     <string name="minirepo_text_error_message_example">This is an error message. There are many errors in this world but this one is unique because it has only one eyes. Prepare for the holy feast and say your prayers.</string>
     <string name="minirepo_text_warning_message_example">A warning message\'s job is to warn your about the impending occurrence. Sometimes it is negligible, other times it is quite dangerous.</string>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_m">
+
+        <androidx.appcompat.widget.AppCompatSpinner
+            android:id="@+id/spinner_selector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dialog" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/button_action"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/minirepo_text_get_value_from_ndk" />
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</layout>

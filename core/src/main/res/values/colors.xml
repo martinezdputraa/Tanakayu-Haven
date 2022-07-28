@@ -17,4 +17,5 @@
     <color name="color_dark_primary">#03121A</color>
     <color name="color_dark_secondary">#768288</color>
     <color name="color_accent">#5E8BA1</color>
+    <color name="color_white">#FFFFFF</color>
 </resources>

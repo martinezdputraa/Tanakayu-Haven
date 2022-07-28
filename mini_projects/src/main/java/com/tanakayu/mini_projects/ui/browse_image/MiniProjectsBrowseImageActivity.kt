@@ -2,6 +2,8 @@ package com.tanakayu.mini_projects.ui.browse_image
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.BitmapFactory
+import android.net.Uri
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.activity.viewModels
 import com.tanakayu.core.constants.SnackbarType
@@ -38,12 +40,8 @@ class MiniProjectsBrowseImageActivity:
         }
     }
 
-    override fun onFileFetchedCallback(file: File?) {
-        super.onFileFetchedCallback(file)
-        showSnackbar(
-            file?.path,
-            type = SnackbarType.Success
-        )
+    override fun onFileFetchedCallback(file: File, uri: Uri) {
+        viewBinder.imageView.setImageURI(uri)
     }
 
     private fun goToActivityResult() {

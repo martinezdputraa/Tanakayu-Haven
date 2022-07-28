@@ -12,6 +12,7 @@ import com.tanakayu.haven.databinding.ActivityHomepageBinding
 import com.tanakayu.haven.datamodel.ProjectDataModel
 import com.tanakayu.haven.datamodel.constants.ProjectName
 import com.tanakayu.mini_projects.ui.browse_image.MiniProjectsBrowseImageActivity
+import com.tanakayu.mini_projects.ui.ndk.MiniProjectsNdkActivity
 import com.tanakayu.mini_projects.ui.snackbars.MiniProjectsSnackbarsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -44,6 +45,7 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
             ProjectName.GITHUB_BROWSER -> navigateToGithubBrowser()
             ProjectName.START_ACTIVITY_FOR_RESULT -> navigateToStartActivityForResult()
             ProjectName.SNACKBAR -> navigateToSnackbarsActivity()
+            ProjectName.NDK -> navigateToNdk()
             else -> showSnackbar(
                 item.projectTitle + " is not yet ready",
                 type = SnackbarType.Warning
@@ -61,5 +63,9 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
 
     private fun navigateToStartActivityForResult() {
         MiniProjectsBrowseImageActivity.startThisActivity(this)
+    }
+
+    private fun navigateToNdk() {
+        MiniProjectsNdkActivity.startThisActivity(this)
     }
 }

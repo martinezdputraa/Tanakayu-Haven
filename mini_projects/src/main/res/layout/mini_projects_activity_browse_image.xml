@@ -6,12 +6,31 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:padding="@dimen/spacing_m">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="600dp"
+            app:cardBackgroundColor="@color/color_white"
+            app:cardCornerRadius="@dimen/dimens_4dp"
+            app:cardElevation="@dimen/dimens_2dp"
+            app:cardUseCompatPadding="true">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/image_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/spacing_s"
+                app:srcCompat="@drawable/neko_atsume" />
+
+        </androidx.cardview.widget.CardView>
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/button_pick_image"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_s"
             android:text="@string/minirepo_text_open_file" />
 
         <androidx.appcompat.widget.AppCompatButton
