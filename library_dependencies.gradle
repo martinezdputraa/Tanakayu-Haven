@@ -54,4 +54,15 @@ dependencies {
     implementation SquareUp.retrofit
     implementation SquareUp.retrofitConverterGson
     implementation SquareUp.loggingInterceptor
+
+    /** JETPACK COMPOSE **/
+    implementation(AndroidX.jetpackComposeActivity)
+    implementation(AndroidX.jetpackComposeUi)
+    implementation(AndroidX.jetpackComposeTooling)
+    implementation(AndroidX.jetpackComposeFoundation)
+    implementation(AndroidX.jetpackComposeMaterial)
+    implementation(AndroidX.jetpackComposeIconsCore)
+    implementation(AndroidX.jetpackComposeIconsExtended)
+    implementation(AndroidX.jetpackComposeLiveData)
+    implementation(AndroidX.jetpackComposeViewModel)
 }

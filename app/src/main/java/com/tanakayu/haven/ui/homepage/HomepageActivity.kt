@@ -12,6 +12,7 @@ import com.tanakayu.haven.databinding.ActivityHomepageBinding
 import com.tanakayu.haven.datamodel.ProjectDataModel
 import com.tanakayu.haven.datamodel.constants.ProjectName
 import com.tanakayu.mini_projects.ui.browse_image.MiniProjectsBrowseImageActivity
+import com.tanakayu.mini_projects.ui.compose.MiniProjectsJetpackComposeActivity
 import com.tanakayu.mini_projects.ui.ndk.MiniProjectsNdkActivity
 import com.tanakayu.mini_projects.ui.snackbars.MiniProjectsSnackbarsActivity
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,11 +47,16 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
             ProjectName.START_ACTIVITY_FOR_RESULT -> navigateToStartActivityForResult()
             ProjectName.SNACKBAR -> navigateToSnackbarsActivity()
             ProjectName.NDK -> navigateToNdk()
+            ProjectName.JETPACK_COMPOSE -> navigateToJetpackCompose()
             else -> showSnackbar(
                 item.projectTitle + " is not yet ready",
                 type = SnackbarType.Warning
             )
         }
+    }
+
+    private fun navigateToJetpackCompose() {
+        MiniProjectsJetpackComposeActivity.startThisActivity(this)
     }
 
     private fun navigateToSnackbarsActivity() {

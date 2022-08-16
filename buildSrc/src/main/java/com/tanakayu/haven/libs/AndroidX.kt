@@ -1,7 +1,7 @@
 package com.tanakayu.haven.libs
 
 object AndroidX {
-    const val coreKtxVersion = "1.6.0"
+    const val coreKtxVersion = "1.8.0"
     const val coreKtx = "androidx.core:core-ktx:$coreKtxVersion"
 
     private const val appCompatVersion = "1.3.1"
@@ -69,4 +69,19 @@ object AndroidX {
 
     private const val lifeCycleLivedataCoreVersion = "2.4.1"
     const val lifeCycleLivedataCore = "androidx.lifecycle:lifecycle-livedata-core-ktx:$lifeCycleLivedataCoreVersion"
+
+    private const val jetpackComposeActivityVersion = "1.3.1"
+    const val jetpackComposeActivity = "androidx.activity:activity-compose:$jetpackComposeActivityVersion"
+
+    private const val jetpackComposeViewModelVersion = "2.5.1"
+    const val jetpackComposeViewModel = "androidx.lifecycle:lifecycle-viewmodel-compose:$jetpackComposeViewModelVersion"
+
+    private const val jetpackComposeVersion = "1.2.1"
+    const val jetpackComposeUi = "androidx.compose.ui:ui:$jetpackComposeVersion"
+    const val jetpackComposeTooling = "androidx.compose.ui:ui-tooling:$jetpackComposeVersion"
+    const val jetpackComposeFoundation = "androidx.compose.foundation:foundation:$jetpackComposeVersion"
+    const val jetpackComposeMaterial = "androidx.compose.material:material:$jetpackComposeVersion"
+    const val jetpackComposeIconsCore = "androidx.compose.material:material-icons-core:$jetpackComposeVersion"
+    const val jetpackComposeIconsExtended = "androidx.compose.material:material-icons-extended:$jetpackComposeVersion"
+    const val jetpackComposeLiveData = "androidx.compose.runtime:runtime-livedata:$jetpackComposeVersion"
 }

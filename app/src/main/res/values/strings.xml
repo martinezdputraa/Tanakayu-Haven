@@ -16,4 +16,7 @@
 
     <string name="text_mini_project_title_ndk">NDK Integration</string>
     <string name="text_mini_project_story_ndk">NDK stands for Native Development Kit is a set of tools that allows you to use C and C++ code with Android. It is commonly used to store baseUrl(s) and other sensitive data but is not limited to that</string>
+
+    <string name="text_project_title_jetpack_compose">Jetpack Compose</string>
+    <string name="text_project_story_jetpack_compose">Jetpack compose exercise</string>
 </resources>

@@ -66,7 +66,13 @@ class HomepageViewModel @Inject constructor(
                 R.drawable.android_ndk,
                 injectedContext.getString(R.string.text_mini_project_title_ndk),
                 injectedContext.getString(R.string.text_mini_project_story_ndk),
-            )
+            ),
+            ProjectDataModel(
+                ProjectName.JETPACK_COMPOSE,
+                R.drawable.jetpack_compose,
+                injectedContext.getString(R.string.text_project_title_jetpack_compose),
+                injectedContext.getString(R.string.text_project_story_jetpack_compose),
+            ),
         )
     }
 }

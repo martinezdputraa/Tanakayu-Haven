@@ -6,5 +6,6 @@ enum class ProjectName {
     WHEEL_SIMULATOR,
     START_ACTIVITY_FOR_RESULT,
     SNACKBAR,
-    NDK
+    NDK,
+    JETPACK_COMPOSE
 }

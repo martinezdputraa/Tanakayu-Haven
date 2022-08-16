@@ -1,7 +1,7 @@
 package com.tanakayu.haven.libs
 
 object Jetbrains {
-    private const val kotlinVersion = "1.6.0"
+    private const val kotlinVersion = "1.7.0"
     const val kotlin = "org.jetbrains.kotlin:kotlin-stdlib:$kotlinVersion"
 
     private const val coroutineVersion = "1.3.9"

@@ -22,7 +22,7 @@ object Google {
     private const val gsonVersion = "2.8.7"
     const val gson = "com.google.code.gson:gson:$gsonVersion"
 
-    const val hiltVersion = "2.41"
+    const val hiltVersion = "2.42"
     const val hilt = "com.google.dagger:hilt-android:$hiltVersion"
     const val hiltCompiler = "com.google.dagger:hilt-android-compiler:$hiltVersion"
 

@@ -1,3 +1,4 @@
+import com.tanakayu.haven.libs.AndroidX
 import com.tanakayu.haven.libs.EasyPermissions
 import com.tanakayu.haven.libs.ImagePicker
 
@@ -6,8 +7,8 @@ apply {
 }
 
 plugins {
-    kotlin("android")
     id("com.android.library")
+    kotlin("android")
 }
 
 android {
