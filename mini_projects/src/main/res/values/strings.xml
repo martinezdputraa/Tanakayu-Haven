@@ -20,4 +20,53 @@
     <string name="minirepo_text_info_message_example">I am here to inform you about the information that is not relevant to any other information that you have received throughout your journey.</string>
 
     <string name="minirepo_text_finish">Finish</string>
+
+    <string name="minirepo_pokemon_squirtle_name">Squirtle</string>
+    <string name="minirepo_pokemon_squirtle_description">Squirtle is one of the three starter pokemon in Gen 1 with water element</string>
+
+    <string name="minirepo_pokemon_bulbasaur_name">Bulbasaur</string>
+    <string name="minirepo_pokemon_bulbasaur_description">Bulbasaur is one of the three starter pokemon in Gen 1 with leaf element</string>
+
+    <string name="minirepo_pokemon_charmander_name">Charmander</string>
+    <string name="minirepo_pokemon_charmander_description">Charmander is one of the three starter pokemon in Gen 1 with fire element</string>
+
+    <string name="minirepo_pokemon_pikachu_name">Pikachu</string>
+    <string name="minirepo_pokemon_pikachu_description">Pikachu is one of the most iconic pokemon in the series. It appear many times in the anime and also it was an electric rat</string>
+
+    <string name="minirepo_pokemon_psyduck_name">Psyduck</string>
+    <string name="minirepo_pokemon_psyduck_description">Psyduck is a duck</string>
+
+    <string name="minirepo_pokemon_mew_name">Mew</string>
+    <string name="minirepo_pokemon_mew_description">Mew is one of the many legendary pokemons</string>
+
+    <string name="minirepo_pokemon_snorlax_name">Snorlax</string>
+    <string name="minirepo_pokemon_snorlax_description">Snorlax likes to sleep. His appearance in the pokemon game series often includes blocking your path towards your next destination.</string>
+
+    <string name="minirepo_pokemon_eevee_name">Eevee</string>
+    <string name="minirepo_pokemon_eevee_description">Eevee is a pokemon that has the most number of evolution branches</string>
+
+    <string name="minirepo_pokemon_espeon_name">Espeon</string>
+    <string name="minirepo_pokemon_espeon_description">Espeon is a physic type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_flareon_name">Flaeron</string>
+    <string name="minirepo_pokemon_flareon_description">Flaeron is a fire type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_glaceon_name">Glaceon</string>
+    <string name="minirepo_pokemon_glaceon_description">Glaceon is an Ice type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_jolteon_name">Jolteon</string>
+    <string name="minirepo_pokemon_jolteon_description">Jolteon is an Electric type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_leafeon_name">Leafeon</string>
+    <string name="minirepo_pokemon_leafeon_description">Leafeon is a leaf type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_sylveon_name">Sylveon</string>
+    <string name="minirepo_pokemon_sylveon_description">Sylveon is a fairy type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_vaporeon_name">Vaporeon</string>
+    <string name="minirepo_pokemon_vaporeon_description">Vaporeon is a water type evolution branching from Eevee</string>
+
+    <string name="minirepo_pokemon_umbreon_name">Umbreon</string>
+    <string name="minirepo_pokemon_umbreon_description">Umbreon is a dark type evolution branching from Eevee</string>
+
 </resources>
