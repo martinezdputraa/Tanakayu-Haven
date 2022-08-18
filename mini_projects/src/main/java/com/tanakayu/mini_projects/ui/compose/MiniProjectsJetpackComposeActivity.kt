@@ -5,16 +5,23 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.annotation.DrawableRes
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.Card
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
@@ -24,6 +31,8 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.tanakayu.mini_projects.R
+import com.tanakayu.mini_projects.data.MiniProjectsPokemon
 import com.tanakayu.mini_projects.data.MiniProjectsPokemonDictionary
 import com.tanakayu.mini_projects.resource.FontBaloo
 
@@ -32,18 +41,180 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             val pokemons = MiniProjectsPokemonDictionary.get()
+            Box {
+                Image(
+                    painter = painterResource(id = R.drawable.pokeball),
+                    contentDescription = "background_image",
+                    modifier = Modifier.fillMaxSize(),
+                    contentScale = ContentScale.Crop
+                )
+                Column(
+                    modifier = Modifier
+                        .padding(top = 16.dp)
+                        .fillMaxSize()
+                ) {
+                    var state by remember {
+                        mutableStateOf(ViewModes.LIST)
+                    }
+                    Row(
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .padding(
+                                start = 16.dp,
+                                end = 16.dp
+                            )
+                    ) {
+                        ToggleStyleButton(R.drawable.ic_list) {
+                            state = ViewModes.LIST
+                        }
+                        Spacer(modifier = Modifier.width(2.dp))
+                        ToggleStyleButton(R.drawable.ic_grid_2x2) {
+                            state = ViewModes.GRIDDED_INFO
+                        }
+                        Spacer(modifier = Modifier.width(2.dp))
+                        ToggleStyleButton(R.drawable.ic_grid_3x3) {
+                            state = ViewModes.GRIDDED_ICONS
+                        }
+                    }
+                    when (state) {
+                        ViewModes.LIST -> ListPokemon(pokemons)
+                        ViewModes.GRIDDED_INFO -> GridPokemon(pokemons)
+                        ViewModes.GRIDDED_ICONS -> GridIconPokemon(pokemons)
+                    }
+                }
+            }
+        }
+    }
 
-            LazyVerticalGrid(
-                columns = GridCells.Fixed(2),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(8.dp),
-                horizontalArrangement = Arrangement.spacedBy(8.dp)
-            ) {
-                items(pokemons.size) {
-                    ImageCard(
-                        painter = painterResource(pokemons[it].drawableRes),
-                        title = getString(pokemons[it].title),
-                        contentDescription = getString(pokemons[it].description),
+    @Composable
+    fun StyleMenu(
+        @DrawableRes resDrawable: Int,
+        modifier: Modifier = Modifier,
+        onClick: () -> Unit
+    ) {
+        IconButton(
+            onClick = onClick,
+            modifier = modifier
+                .background(Color.White, shape = CircleShape)
+                .border(1.dp, color = Color.Black, shape = CircleShape),
+        ) {
+            Icon(
+                painter = painterResource(id = resDrawable),
+                contentDescription = null,
+            )
+        }
+    }
+
+    @Composable
+    fun ToggleStyleButton(
+        @DrawableRes resDrawable: Int,
+        modifier: Modifier = Modifier,
+        onClick: () -> Unit
+    ) {
+        IconButton(
+            onClick = onClick,
+            modifier = modifier
+                .background(Color.White, shape = CircleShape)
+                .border(1.dp, color = Color.Black, shape = CircleShape),
+        ) {
+            Icon(
+                painter = painterResource(id = resDrawable),
+                contentDescription = null,
+            )
+        }
+    }
+
+    @Composable
+    fun ListPokemon(pokemons: List<MiniProjectsPokemon>) {
+        LazyColumn(
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(16.dp),
+            modifier = Modifier.alpha(0.95f)
+        ) {
+            items(pokemons.size) {
+                ListImageCard(
+                    painter = painterResource(pokemons[it].drawableRes),
+                    title = getString(pokemons[it].title),
+                    contentDescription = getString(pokemons[it].description)
+                )
+            }
+        }
+    }
+
+    @Composable
+    fun GridPokemon(pokemons: List<MiniProjectsPokemon>) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(2),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(16.dp),
+        ) {
+            items(pokemons.size) {
+                GridImageCard(
+                    painter = painterResource(pokemons[it].drawableRes),
+                    title = getString(pokemons[it].title),
+                    contentDescription = getString(pokemons[it].description),
+                )
+            }
+        }
+    }
+
+    @Composable
+    fun GridIconPokemon(pokemons: List<MiniProjectsPokemon>) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(3),
+            verticalArrangement = Arrangement.spacedBy(8.dp),
+            horizontalArrangement = Arrangement.spacedBy(8.dp),
+            contentPadding = PaddingValues(16.dp),
+        ) {
+            items(pokemons.size) {
+                GridImageIconCard(
+                    painter = painterResource(pokemons[it].drawableRes)
+                )
+            }
+        }
+    }
+
+    @Composable
+    fun ListImageCard(
+        painter: Painter,
+        contentDescription: String,
+        title: String,
+    ) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(16.dp),
+            elevation = 6.dp
+        ) {
+            Row(modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp)) {
+                Image(
+                    painter = painter,
+                    contentDescription = contentDescription,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier
+                        .padding(end = 8.dp)
+                        .size(84.dp)
+                        .clip(RoundedCornerShape(corner = CornerSize(16.dp)))
+                )
+
+                Column(
+                    modifier = Modifier.fillMaxHeight(),
+                ) {
+                    val fontFamily = FontBaloo.get()
+                    Text(
+                        title, style = TextStyle(
+                            color = Color.Black,
+                            fontSize = 16.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            fontFamily = fontFamily
+                        )
+                    )
+                    Text(
+                        contentDescription, style = TextStyle(
+                            color = Color.Black,
+                            fontSize = 12.sp,
+                            fontFamily = fontFamily
+                        )
                     )
                 }
             }
@@ -51,14 +222,13 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
     }
 
     @Composable
-    fun ImageCard(
+    fun GridImageCard(
         painter: Painter,
         contentDescription: String,
         title: String,
-        modifier: Modifier = Modifier
     ) {
         Card(
-            modifier = modifier.fillMaxWidth(),
+            modifier = Modifier.fillMaxWidth(),
             shape = RoundedCornerShape(24.dp),
             elevation = 6.dp
         ) {
@@ -67,10 +237,10 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
                     painter = painter,
                     contentDescription = contentDescription,
                     contentScale = ContentScale.Crop,
-                    modifier = modifier.fillMaxSize()
+                    modifier = Modifier.fillMaxSize()
                 )
                 Box(
-                    modifier = modifier
+                    modifier = Modifier
                         .fillMaxSize()
                         .background(
                             Brush.verticalGradient(
@@ -111,10 +281,32 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
         }
     }
 
+    @Composable
+    fun GridImageIconCard(painter: Painter) {
+        Card(
+            modifier = Modifier.fillMaxWidth(),
+            shape = RoundedCornerShape(24.dp),
+            elevation = 6.dp
+        ) {
+            Box(modifier = Modifier.height(200.dp)) {
+                Image(
+                    painter = painter,
+                    contentDescription = null,
+                    contentScale = ContentScale.Crop,
+                    modifier = Modifier.fillMaxSize()
+                )
+            }
+        }
+    }
+
     companion object {
         fun startThisActivity(activity: Activity) {
             val intent = Intent(activity, MiniProjectsJetpackComposeActivity::class.java)
             activity.startActivity(intent)
+        }
+
+        private enum class ViewModes {
+            LIST, GRIDDED_INFO, GRIDDED_ICONS
         }
     }
 }

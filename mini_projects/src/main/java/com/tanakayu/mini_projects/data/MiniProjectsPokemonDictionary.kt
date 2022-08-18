@@ -81,8 +81,8 @@ object MiniProjectsPokemonDictionary {
         ),
         MiniProjectsPokemon(
             R.drawable.umbreon,
-            R.string.minirepo_pokemon_vaporeon_name,
-            R.string.minirepo_pokemon_vaporeon_description
+            R.string.minirepo_pokemon_umbreon_name,
+            R.string.minirepo_pokemon_umbreon_description
         ),
     )
 }
