@@ -35,6 +35,7 @@ import com.tanakayu.mini_projects.R
 import com.tanakayu.mini_projects.data.MiniProjectsPokemon
 import com.tanakayu.mini_projects.data.MiniProjectsPokemonDictionary
 import com.tanakayu.mini_projects.resource.FontBaloo
+import com.tanakayu.mini_projects.resource.LightGreen1
 
 class MiniProjectsJetpackComposeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,15 +65,15 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
                                 end = 16.dp
                             )
                     ) {
-                        ToggleStyleButton(R.drawable.ic_list) {
+                        ToggleStyleButton(R.drawable.ic_list, isSelected = state == ViewModes.LIST) {
                             state = ViewModes.LIST
                         }
                         Spacer(modifier = Modifier.width(2.dp))
-                        ToggleStyleButton(R.drawable.ic_grid_2x2) {
+                        ToggleStyleButton(R.drawable.ic_grid_2x2, isSelected = state == ViewModes.GRIDDED_INFO) {
                             state = ViewModes.GRIDDED_INFO
                         }
                         Spacer(modifier = Modifier.width(2.dp))
-                        ToggleStyleButton(R.drawable.ic_grid_3x3) {
+                        ToggleStyleButton(R.drawable.ic_grid_3x3, isSelected = state == ViewModes.GRIDDED_ICONS) {
                             state = ViewModes.GRIDDED_ICONS
                         }
                     }
@@ -87,35 +88,24 @@ class MiniProjectsJetpackComposeActivity : ComponentActivity() {
     }
 
     @Composable
-    fun StyleMenu(
-        @DrawableRes resDrawable: Int,
-        modifier: Modifier = Modifier,
-        onClick: () -> Unit
-    ) {
-        IconButton(
-            onClick = onClick,
-            modifier = modifier
-                .background(Color.White, shape = CircleShape)
-                .border(1.dp, color = Color.Black, shape = CircleShape),
-        ) {
-            Icon(
-                painter = painterResource(id = resDrawable),
-                contentDescription = null,
-            )
-        }
-    }
-
-    @Composable
     fun ToggleStyleButton(
         @DrawableRes resDrawable: Int,
         modifier: Modifier = Modifier,
+        isSelected: Boolean = false,
         onClick: () -> Unit
     ) {
         IconButton(
             onClick = onClick,
             modifier = modifier
-                .background(Color.White, shape = CircleShape)
-                .border(1.dp, color = Color.Black, shape = CircleShape),
+                .background(
+                    color = Color.White,
+                    shape = CircleShape
+                )
+                .border(
+                    width = if (isSelected) 3.dp else 1.dp,
+                    color = if (isSelected) LightGreen1 else Color.Black,
+                    shape = CircleShape
+                ),
         ) {
             Icon(
                 painter = painterResource(id = resDrawable),

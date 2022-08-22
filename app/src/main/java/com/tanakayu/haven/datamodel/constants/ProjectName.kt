@@ -7,5 +7,6 @@ enum class ProjectName {
     START_ACTIVITY_FOR_RESULT,
     SNACKBAR,
     NDK,
-    JETPACK_COMPOSE
+    JETPACK_COMPOSE,
+    MEDITATION,
 }

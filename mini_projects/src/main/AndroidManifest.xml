@@ -23,6 +23,10 @@
             android:name=".ui.compose.MiniProjectsJetpackComposeActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".ui.philipp.meditation.MiniProjectsMeditationHomeActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
 
     </application>
 </manifest>

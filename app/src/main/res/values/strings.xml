@@ -19,4 +19,7 @@
 
     <string name="text_project_title_jetpack_compose">Jetpack Compose</string>
     <string name="text_project_story_jetpack_compose">Jetpack compose exercise</string>
+
+    <string name="text_project_title_meditation">Meditation UI</string>
+    <string name="text_project_story_meditation">A mini project from following youtube tutorial on how to make a meditation UI using jetpack compose</string>
 </resources>

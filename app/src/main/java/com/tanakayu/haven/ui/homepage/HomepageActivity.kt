@@ -14,6 +14,7 @@ import com.tanakayu.haven.datamodel.constants.ProjectName
 import com.tanakayu.mini_projects.ui.browse_image.MiniProjectsBrowseImageActivity
 import com.tanakayu.mini_projects.ui.compose.MiniProjectsJetpackComposeActivity
 import com.tanakayu.mini_projects.ui.ndk.MiniProjectsNdkActivity
+import com.tanakayu.mini_projects.ui.philipp.meditation.MiniProjectsMeditationHomeActivity
 import com.tanakayu.mini_projects.ui.snackbars.MiniProjectsSnackbarsActivity
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -48,6 +49,7 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
             ProjectName.SNACKBAR -> navigateToSnackbarsActivity()
             ProjectName.NDK -> navigateToNdk()
             ProjectName.JETPACK_COMPOSE -> navigateToJetpackCompose()
+            ProjectName.MEDITATION -> navigateToMeditation()
             else -> showSnackbar(
                 item.projectTitle + " is not yet ready",
                 type = SnackbarType.Warning
@@ -73,5 +75,9 @@ class HomepageActivity : CoreActivity<HomepageViewModel, ActivityHomepageBinding
 
     private fun navigateToNdk() {
         MiniProjectsNdkActivity.startThisActivity(this)
+    }
+
+    private fun navigateToMeditation() {
+        MiniProjectsMeditationHomeActivity.startThisActivity(this)
     }
 }

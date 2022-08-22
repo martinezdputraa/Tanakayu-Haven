@@ -73,6 +73,12 @@ class HomepageViewModel @Inject constructor(
                 injectedContext.getString(R.string.text_project_title_jetpack_compose),
                 injectedContext.getString(R.string.text_project_story_jetpack_compose),
             ),
+            ProjectDataModel(
+                ProjectName.MEDITATION,
+                R.drawable.meditation,
+                injectedContext.getString(R.string.text_project_title_meditation),
+                injectedContext.getString(R.string.text_project_story_meditation),
+            ),
         )
     }
 }
